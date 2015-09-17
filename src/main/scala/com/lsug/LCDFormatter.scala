@@ -16,10 +16,10 @@ class LCDFormatter(){
 
   def format(num: Int) = {
     val digits: Seq[LCDDigit] = num.toString.map(i => digitMapping(i.asDigit)) // construct a sequence of LCDDigits
-    val firstLine  = digits.map(_.firstRow) mkString " "                  // construct a string of each row
+    val firstLine  = digits.map(_.firstRow) mkString " "                       // construct a string of each row
     val secondLine = digits.map(_.secondRow) mkString " "
     val thirdLine  = digits.map(_.thirdRow) mkString " "
-    List(firstLine, secondLine, thirdLine) mkString "\n"                  // build the result from each row
+    List(firstLine, secondLine, thirdLine) mkString "\n"                       // build the result from each row
   }
 }
 
