@@ -15,12 +15,12 @@ class LCDFormatter(){
   )
 
   def format(num: Int) = {
-    val chars      = num.toString.toCharArray                     // split an Int into an array of chars
-    val digits     = chars.map(i => mapping(i.asDigit))           // convert this array into a list of LCDDigit objects
-    val firstLine  = digits.map(_.firstRow) mkString (" ")        // construct a string of the first row
-    val secondLine = digits.map(_.secondRow) mkString (" ")
-    val thirdLine  = digits.map(_.thirdRow) mkString (" ")
-    List(firstLine, secondLine, thirdLine) mkString "\n"          // concatenate these strings, separated with newline
+    val chars      = num.toString.toCharArray              // split an Int into an array of chars
+    val digits     = chars.map(i => mapping(i.asDigit))    // construct an array of LCDDigit objects
+    val firstLine  = digits.map(_.firstRow) mkString " "   // construct a string of the first row containing all digits
+    val secondLine = digits.map(_.secondRow) mkString " "
+    val thirdLine  = digits.map(_.thirdRow) mkString " "
+    List(firstLine, secondLine, thirdLine) mkString "\n"   // concatenate these strings, separated with newline
   }
 }
 
