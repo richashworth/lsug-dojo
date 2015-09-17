@@ -1,9 +1,7 @@
 package com.lsug
 
-import scala.collection.immutable.IndexedSeq
-
 class LCDFormatter(){
-  val mapping = Map(
+  val digitMapping = Map(
     0 -> zero,
     1 -> one,
     2 -> two,
@@ -17,7 +15,7 @@ class LCDFormatter(){
   )
 
   def format(num: Int) = {
-    val digits: Seq[LCDDigit] = num.toString.map(i => mapping(i.asDigit)) // construct a sequence of LCDDigits
+    val digits: Seq[LCDDigit] = num.toString.map(i => digitMapping(i.asDigit)) // construct a sequence of LCDDigits
     val firstLine  = digits.map(_.firstRow) mkString " "                  // construct a string of each row
     val secondLine = digits.map(_.secondRow) mkString " "
     val thirdLine  = digits.map(_.thirdRow) mkString " "
