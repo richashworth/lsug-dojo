@@ -14,7 +14,7 @@ class LCDFormatter(){
     9 -> nine
   )
 
-  def format(num: Int) = {
+  def format(num: BigInt) = {
     val digits: Seq[LCDDigit] = num.toString.map(i => digitMapping(i.asDigit)) // construct a sequence of LCDDigits
     val firstLine  = digits.map(_.firstRow) mkString " "                       // construct a string of each row
     val secondLine = digits.map(_.secondRow) mkString " "
@@ -27,6 +27,6 @@ object Main {
   val lCDFormatter = new LCDFormatter
 
   def main(args: Array[String]): Unit = {
-    println(lCDFormatter.format(214))
+    println(lCDFormatter.format(1234567890))
   }
 }
