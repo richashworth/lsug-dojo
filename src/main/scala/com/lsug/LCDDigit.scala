@@ -56,7 +56,7 @@ object seven extends LCDDigit(
 object eight extends LCDDigit(
   firstRow  = "._.",
   secondRow = "|_|",
-  thirdRow  = "|.|"
+  thirdRow  = "|_|"
 )
 
 object nine extends LCDDigit(
