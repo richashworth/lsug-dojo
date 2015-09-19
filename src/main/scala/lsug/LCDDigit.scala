@@ -1,4 +1,4 @@
-package com.lsug
+package lsug
 
 /**
  * Created by rich on 17/09/15.

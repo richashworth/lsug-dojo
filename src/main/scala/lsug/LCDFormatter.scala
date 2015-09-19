@@ -1,4 +1,4 @@
-package com.lsug
+package lsug
 
 class LCDFormatter(){
   val digitMapping = Map(

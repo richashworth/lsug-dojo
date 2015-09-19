@@ -1,4 +1,4 @@
-package com.lsug
+package lsug
 
 import org.scalatest.FunSuite
 
