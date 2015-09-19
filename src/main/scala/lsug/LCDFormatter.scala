@@ -19,7 +19,7 @@ class LCDFormatter(){
     val firstLine  = digits.map(_.firstRow) mkString " "                       // construct a string of each row
     val secondLine = digits.map(_.secondRow) mkString " "
     val thirdLine  = digits.map(_.thirdRow) mkString " "
-    List(firstLine, secondLine, thirdLine) mkString "\n"                       // build the result from each row
+    Seq(firstLine, secondLine, thirdLine) mkString "\n"                       // build the result from each row
   }
 }
 
