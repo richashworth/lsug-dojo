@@ -3,7 +3,11 @@ package lsug
 /**
  * Created by rich on 17/09/15.
  */
-class LCDDigit(val firstRow: String, val secondRow: String, val thirdRow: String) {}
+case class LCDDigit(val firstRow: String, val secondRow: String, val thirdRow: String){
+  def formatDigit(): Unit ={
+    productIterator.foreach(i => println(i))
+  }
+}
 
 object zero extends LCDDigit(
   firstRow  = "._.",
