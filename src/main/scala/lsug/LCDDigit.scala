@@ -14,7 +14,6 @@ object zero extends LCDDigit(
   "|.|",
   "|_|"
 )
-
 object one extends LCDDigit("...", "..|", "..|")
 object two extends LCDDigit("._.", "._|", "|_.")
 object three extends LCDDigit("._.", "._|", "._|")
