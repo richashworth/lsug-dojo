@@ -11,17 +11,17 @@ class LCDFormatterTest extends FunSuite {
     val LCD_THREE = """._.
                       ^._|
                       ^._|""".stripMargin('^')
-    assert(LCDFormatter.parse(3).toString == LCD_THREE)
+    assert(LCDFormatter.format(3) == LCD_THREE)
   }
 
   test("ten should be formatted correctly") {
     val LCD_TEN = """... ._.
                     ^..| |.|
                     ^..| |_|""".stripMargin('^')
-    assert(LCDFormatter.parse(10).toString == LCD_TEN)
+    assert(LCDFormatter.format(10) == LCD_TEN)
   }
 
   test("negative inputs should throw an exception") {
-    intercept[IllegalArgumentException]{LCDFormatter.parse(-1)}
+    intercept[IllegalArgumentException]{LCDFormatter.format(-1)}
   }
 }
