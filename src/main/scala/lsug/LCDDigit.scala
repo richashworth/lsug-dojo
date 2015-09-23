@@ -15,56 +15,12 @@ object zero extends LCDDigit(
   "|_|"
 )
 
-object one extends LCDDigit(
-  "...",
-  "..|",
-  "..|"
-)
-
-object two extends LCDDigit(
-  "._.",
-  "._|",
-  "|_."
-)
-
-object three extends LCDDigit(
-  "._.",
-  "._|",
-  "._|"
-)
-
-object four extends LCDDigit(
-  "...",
-  "|_|",
-  "..|"
-)
-
-object five extends LCDDigit(
-  "._.",
-  "|_.",
-  "._|"
-)
-
-object six extends LCDDigit(
-  "._.",
-  "|_.",
-  "|_|"
-)
-
-object seven extends LCDDigit(
-  "._.",
-  "..|",
-  "..|"
-)
-
-object eight extends LCDDigit(
-  "._.",
-  "|_|",
-  "|_|"
-)
-
-object nine extends LCDDigit(
-  "._.",
-  "|_|",
-  "..|"
-)
+object one extends LCDDigit("...", "..|", "..|")
+object two extends LCDDigit("._.", "._|", "|_.")
+object three extends LCDDigit("._.", "._|", "._|")
+object four extends LCDDigit("...", "|_|", "..|")
+object five extends LCDDigit("._.", "|_.", "._|")
+object six extends LCDDigit("._.", "|_.", "|_|")
+object seven extends LCDDigit("._.", "..|", "..|")
+object eight extends LCDDigit("._.", "|_|", "|_|")
+object nine extends LCDDigit("._.", "|_|", "..|")
