@@ -15,15 +15,15 @@ object LCDFormatter {
 
   def merge(a: LCDDigit, b: LCDDigit): LCDDigit = {
     LCDDigit(a.firstRow + " " + b.firstRow,
-      a.secondRow + " " + b.secondRow,
-      a.thirdRow + " " + b.thirdRow)
+             a.secondRow + " " + b.secondRow,
+             a.thirdRow + " " + b.thirdRow)
   }
 
   def parse(input: BigInt): LCDDigit = (input compare 0).signum match {
     case -1 => val message: String = s"${getClass.getName} only displays positive numbers"
-      throw new IllegalArgumentException(message)
-    case _ => val digits = input.toString().map(a => digitMapping(a.asDigit))
-      digits.reduce((a, b) => merge(a, b))
+               throw new IllegalArgumentException(message)
+    case _  => val digits = input.toString().map(a => digitMapping(a.asDigit))
+               digits.reduce((a, b) => merge(a, b))
   }
 
   def format(input: BigInt) = parse(input).toString
