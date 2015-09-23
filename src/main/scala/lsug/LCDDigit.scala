@@ -3,7 +3,7 @@ package lsug
 /**
  * Created by rich on 17/09/15.
  */
-case class LCDDigit(val firstRow: String, val secondRow: String, val thirdRow: String) {
+case class LCDDigit(firstRow: String, secondRow: String, thirdRow: String) {
   override def toString: String = {
     productIterator mkString "\n"
   }
@@ -67,10 +67,4 @@ object nine extends LCDDigit(
   "._.",
   "|_|",
   "..|"
-)
-
-object empty extends LCDDigit(
-  "",
-  "",
-  ""
 )

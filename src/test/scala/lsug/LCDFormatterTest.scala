@@ -22,8 +22,6 @@ class LCDFormatterTest extends FunSuite {
   }
 
   test("negative inputs should throw an exception") {
-    intercept[IllegalArgumentException]{
-      LCDFormatter.parse(-1)
-    }
+    intercept[IllegalArgumentException]{LCDFormatter.parse(-1)}
   }
 }
