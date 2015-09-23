@@ -6,19 +6,24 @@ import org.scalatest.FunSuite
  * Created by rich on 17/09/15.
  */
 class LCDFormatterTest extends FunSuite {
-  val formatter = new LCDFormatter
 
   test("three should be formatted correctly") {
-    val THREE_AS_DIGIT = """._.
-                           ^._|
-                           ^._|""".stripMargin('^')
-    assert(formatter.getDisplayStr(3) == THREE_AS_DIGIT)
+    val LCD_THREE = """._.
+                      ^._|
+                      ^._|""".stripMargin('^')
+    assert(LCDFormatter.parse(3).toString == LCD_THREE)
   }
 
   test("ten should be formatted correctly") {
-    val TEN_AS_DIGITS = """... ._.
-                          ^..| |.|
-                          ^..| |_|""".stripMargin('^')
-    assert(formatter.getDisplayStr(10) == TEN_AS_DIGITS)
+    val LCD_TEN = """... ._.
+                    ^..| |.|
+                    ^..| |_|""".stripMargin('^')
+    assert(LCDFormatter.parse(10).toString == LCD_TEN)
+  }
+
+  test("negative inputs should throw an exception") {
+    intercept[IllegalArgumentException]{
+      LCDFormatter.parse(-1)
+    }
   }
 }

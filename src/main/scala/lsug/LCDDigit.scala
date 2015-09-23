@@ -3,68 +3,74 @@ package lsug
 /**
  * Created by rich on 17/09/15.
  */
-case class LCDDigit(val firstRow: String, val secondRow: String, val thirdRow: String){
-  def formatDigit(): Unit ={
-    productIterator.foreach(i => println(i))
+case class LCDDigit(val firstRow: String, val secondRow: String, val thirdRow: String) {
+  override def toString: String = {
+    productIterator mkString "\n"
   }
 }
 
 object zero extends LCDDigit(
-  firstRow  = "._.",
-  secondRow = "|.|",
-  thirdRow  = "|_|"
+  "._.",
+  "|.|",
+  "|_|"
 )
 
 object one extends LCDDigit(
-  firstRow  = "...",
-  secondRow = "..|",
-  thirdRow  = "..|"
+  "...",
+  "..|",
+  "..|"
 )
 
 object two extends LCDDigit(
-  firstRow  = "._.",
-  secondRow = "._|",
-  thirdRow  = "|_."
+  "._.",
+  "._|",
+  "|_."
 )
 
 object three extends LCDDigit(
-  firstRow  = "._.",
-  secondRow = "._|",
-  thirdRow  = "._|"
+  "._.",
+  "._|",
+  "._|"
 )
 
 object four extends LCDDigit(
-  firstRow  = "...",
-  secondRow = "|_|",
-  thirdRow  = "..|"
+  "...",
+  "|_|",
+  "..|"
 )
 
 object five extends LCDDigit(
-  firstRow  = "._.",
-  secondRow = "|_.",
-  thirdRow  = "._|"
+  "._.",
+  "|_.",
+  "._|"
 )
 
 object six extends LCDDigit(
-  firstRow  = "._.",
-  secondRow = "|_.",
-  thirdRow  = "|_|"
+  "._.",
+  "|_.",
+  "|_|"
 )
 
 object seven extends LCDDigit(
-  firstRow  = "._.",
-  secondRow = "..|",
-  thirdRow  = "..|"
+  "._.",
+  "..|",
+  "..|"
 )
 
 object eight extends LCDDigit(
-  firstRow  = "._.",
-  secondRow = "|_|",
-  thirdRow  = "|_|"
+  "._.",
+  "|_|",
+  "|_|"
 )
 
 object nine extends LCDDigit(
-  firstRow  = "._.",
-  secondRow = "|_|",
-  thirdRow  = "..|"
+  "._.",
+  "|_|",
+  "..|"
+)
+
+object empty extends LCDDigit(
+  "",
+  "",
+  ""
 )

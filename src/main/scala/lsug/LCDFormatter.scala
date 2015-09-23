@@ -1,6 +1,6 @@
 package lsug
 
-class LCDFormatter(){
+object LCDFormatter {
   val digitMapping = Map(
     0 -> zero,
     1 -> one,
@@ -11,22 +11,25 @@ class LCDFormatter(){
     6 -> six,
     7 -> seven,
     8 -> eight,
-    9 -> nine
-  )
+    9 -> nine)
 
-  def getDisplayStr(num: BigInt) = {
-    val digits: Seq[LCDDigit] = num.toString.map(i => digitMapping(i.asDigit)) // construct a sequence of LCDDigits
-    val firstLine  = digits.map(_.firstRow) mkString " "                       // construct a string of each row
-    val secondLine = digits.map(_.secondRow) mkString " "
-    val thirdLine  = digits.map(_.thirdRow) mkString " "
-    Seq(firstLine, secondLine, thirdLine) mkString "\n"                       // build the result from each row
+  def merge(a: LCDDigit, b: LCDDigit): LCDDigit = {
+    LCDDigit(a.firstRow + " " + b.firstRow,
+      a.secondRow + " " + b.secondRow,
+      a.thirdRow + " " + b.thirdRow)
+  }
+
+  def parse(input: BigInt): LCDDigit = (input compare 0).signum match {
+    case -1 => throw new IllegalArgumentException(s"${getClass.getName} only displays positive numbers")
+    case _ => {
+      val digits: Seq[LCDDigit] = input.toString.map(a => digitMapping(a.asDigit))
+      digits.reduce((a, b) => merge(a, b))
+    }
   }
 }
 
 object Main {
-  val lCDFormatter = new LCDFormatter
-
-  def main(args: Array[String]): Unit = {
-    println(lCDFormatter.getDisplayStr(1234567890))
+  def main(args: Array[String]) {
+    println(LCDFormatter.parse(1234567890))
   }
 }
