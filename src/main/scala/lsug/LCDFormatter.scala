@@ -14,9 +14,9 @@ object LCDFormatter {
     9 -> nine)
 
   def merge(a: LCDDigit, b: LCDDigit): LCDDigit = {
-    LCDDigit(a.firstRow + " " + b.firstRow,
+    LCDDigit(a.firstRow  + " " + b.firstRow,
              a.secondRow + " " + b.secondRow,
-             a.thirdRow + " " + b.thirdRow)
+             a.thirdRow  + " " + b.thirdRow)
   }
 
   def parse(input: BigInt): LCDDigit = (input compare 0).signum match {
