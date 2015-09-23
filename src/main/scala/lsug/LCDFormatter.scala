@@ -20,10 +20,8 @@ object LCDFormatter {
   }
 
   def parse(input: BigInt): LCDDigit = (input compare 0).signum match {
-    case -1 => val message: String = s"${getClass.getName} only displays positive numbers"
-               throw new IllegalArgumentException(message)
-    case _  => val digits = input.toString().map(a => digitMapping(a.asDigit))
-               digits.reduce((a, b) => merge(a, b))
+    case -1 => throw new IllegalArgumentException(s"${getClass.getName} only displays positive numbers")
+    case _  => input.toString().map(a => digitMapping(a.asDigit)).reduce((a, b) => merge(a, b))
   }
 
   def format(input: BigInt) = parse(input).toString
