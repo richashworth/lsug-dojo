@@ -13,13 +13,13 @@ object LCDFormatter {
     8 -> eight,
     9 -> nine)
 
-  def merge(a: LCDDigit, b: LCDDigit): LCDDigit = {
-    LCDDigit(a.firstRow  + " " + b.firstRow,
+  def merge(a: LCDDisplay, b: LCDDisplay): LCDDisplay = {
+    LCDDisplay(a.firstRow  + " " + b.firstRow,
              a.secondRow + " " + b.secondRow,
              a.thirdRow  + " " + b.thirdRow)
   }
 
-  def parse(input: BigInt): LCDDigit = (input compare 0).signum match {
+  def parse(input: BigInt): LCDDisplay = (input compare 0).signum match {
     case -1 => throw new IllegalArgumentException(s"${getClass.getName} only displays positive numbers")
     case _  => input.toString().map(a => digitMapping(a.asDigit)).reduce((a, b) => merge(a, b))
   }
