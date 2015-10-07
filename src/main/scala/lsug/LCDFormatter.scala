@@ -24,8 +24,8 @@ object LCDFormatter {
 
   def parse(input: BigInt): LCDDisplay = (input compare 0).signum match {
     case -1 => throw new IllegalArgumentException(invalidInputMsg)
-    case _ => input.toString().map(a => digitMapping(a.asDigit)).reduce((a, b) => merge(a, b))
-//    case _ => input.toString().par.map(a => digitMapping(a.asDigit)).reduce((a, b) => merge(a, b))
+    case _  => input.toString().map(a => digitMapping(a.asDigit)).reduce((a, b) => merge(a, b))
+//  case _  => input.toString().par.map(a => digitMapping(a.asDigit)).reduce((a, b) => merge(a, b))
   }
 
   def format(input: BigInt) = parse(input).toString
