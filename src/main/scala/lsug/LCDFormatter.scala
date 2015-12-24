@@ -16,16 +16,15 @@ object LCDFormatter {
 
   val invalidInputMsg = s"${getClass.getName} only displays positive numbers"
 
-  def merge(a: LCDDisplay, b: LCDDisplay): LCDDisplay = {
-    LCDDisplay(a.firstRow  + " " + b.firstRow,
+  private def merge(a: LCDDisplay, b: LCDDisplay): LCDDisplay = {
+    LCDDisplay(a.firstRow + " " + b.firstRow,
                a.secondRow + " " + b.secondRow,
-               a.thirdRow  + " " + b.thirdRow)
+               a.thirdRow + " " + b.thirdRow)
   }
 
-  def parse(input: BigInt): LCDDisplay = (input compare 0).signum match {
+  private def parse(input: BigInt): LCDDisplay = (input compare 0).signum match {
     case -1 => throw new IllegalArgumentException(invalidInputMsg)
     case _  => input.toString().map(a => digitMapping(a.asDigit)).reduce((a, b) => merge(a, b))
-//  case _  => input.toString().par.map(a => digitMapping(a.asDigit)).reduce((a, b) => merge(a, b))
   }
 
   def format(input: BigInt) = parse(input).toString

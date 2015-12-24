@@ -14,12 +14,12 @@ object zero extends LCDDisplay(
   "|.|",
   "|_|"
 )
-object one extends LCDDisplay("...", "..|", "..|")
-object two extends LCDDisplay("._.", "._|", "|_.")
+object one   extends LCDDisplay("...", "..|", "..|")
+object two   extends LCDDisplay("._.", "._|", "|_.")
 object three extends LCDDisplay("._.", "._|", "._|")
-object four extends LCDDisplay("...", "|_|", "..|")
-object five extends LCDDisplay("._.", "|_.", "._|")
-object six extends LCDDisplay("._.", "|_.", "|_|")
+object four  extends LCDDisplay("...", "|_|", "..|")
+object five  extends LCDDisplay("._.", "|_.", "._|")
+object six   extends LCDDisplay("._.", "|_.", "|_|")
 object seven extends LCDDisplay("._.", "..|", "..|")
 object eight extends LCDDisplay("._.", "|_|", "|_|")
-object nine extends LCDDisplay("._.", "|_|", "..|")
+object nine  extends LCDDisplay("._.", "|_|", "..|")
